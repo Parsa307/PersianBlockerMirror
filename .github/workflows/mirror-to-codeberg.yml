@@ -8,10 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mirror GitHub → Codeberg
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          repository: MasterKia/PersianBlocker
+          ref: main
+
+      - name: Push to Codeberg
         run: |
-          git clone https://github.com/MasterKia/PersianBlocker.git
-          cd PersianBlocker
           git remote set-url origin https://oauth2:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/Parsast/PersianBlocker.git
           git push -u origin main
 

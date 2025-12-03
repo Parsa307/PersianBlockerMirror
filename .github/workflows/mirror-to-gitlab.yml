@@ -8,10 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mirror GitHub → GitLab
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          repository: MasterKia/PersianBlocker
+          ref: main
+
+      - name: Push to GitLab
         run: |
-          git clone https://github.com/MasterKia/PersianBlocker.git
-          cd PersianBlocker
           git remote set-url origin https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/Parsast/PersianBlocker.git
           git push -u origin main
 
