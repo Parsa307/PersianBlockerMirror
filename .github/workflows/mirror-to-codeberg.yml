@@ -16,5 +16,5 @@ jobs:
 
       - name: Push to Codeberg
         run: |
-          git remote add codeberg https://oauth2:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/Parsast/PersianBlocker.git
+          git remote add codeberg https://Parsast:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/Parsast/PersianBlocker.git
           git push -u codeberg main
