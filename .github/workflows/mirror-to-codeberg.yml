@@ -13,7 +13,6 @@ jobs:
         with:
           fetch-depth: 0
           repository: MasterKia/PersianBlocker
-          ref: main
 
       - name: Push to Codeberg
         run: |
